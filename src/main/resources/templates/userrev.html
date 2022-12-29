@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>销售人员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/tosaCustomer"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li><a href="/tosaProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li><a href="/tosaOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li class="current"><a href="/tosaSales"><span class="icon icon-salesman"></span>个人管理</a></li>
+        </ul>
+    </div><!--header-->
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li><a href="/toSelectsa" class="find">个人信息</a></li>
+            <li class="current"><a href="/toUpdatesa" class="revise">修改信息</a></li>
+        </ul>
+        <br /><br />
+    </div><!--leftmenu-->
+    <div class="centercontent" align="left">
+        <div class="fromreport">
+            <form action="/updatesa" method="post">
+                <label class="">Id:</label>
+                <div><input  type="text" name="sid"><br> </div>
+                <label class="">名称:</label>
+                <div><input  type="text" name="sname"><br>   </div>
+                <label class="">密码:</label>
+                <div><input type="text" name="spassword"><br> </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="提交"></div><br>
+                <div class="reset">
+                    <input type="reset" value="重置"> </div>
+            </form>
+
+        </div>
+    </div><!-- centercontent -->
+
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

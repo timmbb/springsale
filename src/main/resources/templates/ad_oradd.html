@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="js/custom/general.js"></script>
+    <script type="text/javascript" src="js/custom/dashboard.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/plugins/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>管理员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/toadCustomer"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li><a href="/toadProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li class="current"><a href="/toadOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li><a href="/toadSales"><span class="icon icon-salesman"></span>员工管理</a></li>
+        </ul>
+    </div><!--header-->
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li><a href="/toadSelecto" class="find">订单查询</a></li>-->
+            <li class="current"><a href="/toadAddo" class="add">增添订单</a></li>
+            <li><a href="/toadUpdateo" class="revise">修改信息</a></li>
+        </ul>
+        <br /><br />
+    </div><!--leftmenu-->
+
+    <div class="centercontent" align="left">
+        <div class="fromreport">
+            <form action="/adaddo" method="post">
+                <label class="">订单Id:</label>
+                <div><input  type="text" name="oid"><br> </div>
+                <label class="">产品Id:</label>
+                <div><input  type="text" name="pid"><br>   </div>
+                <label class="">客户Id:</label>
+                <div><input type="text" name="Id"><br> </div>
+                <label class="">销售人员Id:</label>
+                <div><input type="text" name="sid"><br> </div>
+                <label class="">产品名称:</label>
+                <div><input type="text" name="pName"><br>  </div>
+                <label class="">数量:</label>
+                <div><input type="text" name="amount"><br> </div>
+                <label class="">交易金额:</label>
+                <div><input type="text" name="price"><br></div>
+                <label class="">交易时间:</label>
+                <div><input type="text" name="submittime"><br></div>
+                <label class="">是否交货:</label>
+                <div><input type="text" name="issales"><br>  </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="提交"></div><br>
+                <div class="reset">
+                    <input type="reset" value="重置"> </div>
+            </form>
+
+        </div>
+    </div><!-- centercontent -->
+
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="js/custom/general.js"></script>
+    <script type="text/javascript" src="js/custom/dashboard.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/plugins/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>管理员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/toadCustomer"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li class="current"><a href="/toadProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li><a href="/toadOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li><a href="/toadSales"><span class="icon icon-salesman"></span>员工管理</a></li>
+        </ul>
+    </div><!--header-->
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li><a href="/toadSelectp" class="find">产品查询</a></li>
+            <li><a href="/toadAddp" class="add">增添产品</a></li>
+            <li><a href="/toadUpdatep" class="revise">修改信息</a></li>
+        </ul>
+        <br /><br />
+    </div><!--leftmenu-->
+
+    <div class="centercontent">
+
+        <div id="contentwrapper" class="contentwrapper">
+            <div class="search">
+                <form action="/adselectp" method="post">
+                    <input type="text" name="pid" id="pid" value="请输入要查找的产品ID" />
+                    <input type="submit" class="submitbutton"/>
+                </form>
+            </div><!--search-->
+            <br /><br />
+            <div class="contenttitle2">
+                <h3>您查询的产品信息：</h3>
+            </div><!--contenttitle-->
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                </colgroup>
+                <thead>
+
+                <tr>
+                    <th class="head0">ID</th>
+                    <th class="head1">Name</th>
+                    <th class="head0">Type</th>
+                    <th class="head1">Author</th>
+                    <th class="head0">Price</th>
+                    <th class="head1">Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <br />
+            <div class="contenttitle2">
+                <h3>产品信息</h3>
+            </div><!--contenttitle-->
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable2">
+                <form action="/addeletep" method="post">
+                    <tr>
+                        <td>
+                            <input type="submit" value="delete">
+                        </td>
+                    </tr>
+                    <colgroup>
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head1">choose</th>
+                        <th class="head0">ID</th>
+                        <th class="head1">Name</th>
+                        <th class="head0">Type</th>
+                        <th class="head1">Author</th>
+                        <th class="head0">Price</th>
+                        <th class="head1">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--/*@thymesVar id="pages" type=""*/-->
+                    <tr  th:each="cs : ${pages}" th:inline="none">
+                        <td>
+                            <input type="checkbox" name="pids" th:value="${cs.getpid()}">
+                        </td>
+                        <td th:text="${cs.getpid()}"></td>
+                        <td th:text="${cs.getpName()}"></td>
+                        <td th:text="${cs.getpType()}"></td>
+                        <td th:text="${cs.getpAuthor()}"></td>
+                        <td th:text="${cs.getpPrice()}"></td>
+                        <td th:text="${cs.getpAmount()}"></td>
+                        <!--                    <td><a th:href="${'/select/'+cs.getId()}" >select</a></td>-->
+                        <!--                    <td ><a th:href="${'/edit/'+cs.getId()}">edit</a></td>-->
+                        <!--                    <td><a th:href="${'/del/'+user.userId}" >delete</a></td>-->
+                    </tr>
+                    </tbody>
+                </form>
+            </table>
+        </div><!--contentwrapper-->
+
+    </div><!-- centercontent -->
+
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>销售人员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/tosaCustomer.html"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li><a href="/tosaProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li class="current"><a href="/tosaOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li><a href="/tosaSales"><span class="icon icon-salesman"></span>个人管理</a></li>
+        </ul>
+    </div>
+
+        <div class="vernav2 iconmenu">
+            <ul>
+                <li><a href="/toAddo" class="add">增添订单</a></li>
+                <li class="current"><a href="/toUpdateo" class="revise">修改信息</a></li>
+            </ul>
+            <br /><br />
+    </div><!--leftmenu-->
+
+    <div class="centercontent" align="left">
+        <div class="fromreport">
+            <form action="/updateo" method="post">
+                <label class="">订单Id:</label>
+                <div><input  type="text" name="oid"><br> </div>
+                <label class="">产品Id:</label>
+                <div><input  type="text" name="pid"><br>   </div>
+                <label class="">客户Id:</label>
+                <div><input type="text" name="Id"><br> </div>
+                <label class="">产品名称:</label>
+                <div><input type="text" name="pName"><br>  </div>
+                <label class="">数量:</label>
+                <div><input type="text" name="amount"><br> </div>
+                <label class="">交易金额:</label>
+                <div><input type="text" name="price"><br></div>
+                <label class="">交易时间:</label>
+                <div><input type="text" name="submittime"><br></div>
+                <label class="">是否交货:</label>
+                <div><input type="text" name="issales"><br>  </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="提交"></div><br>
+                <div class="reset">
+                    <input type="reset" value="重置"> </div>
+            </form>
+
+        </div>
+    </div><!-- centercontent -->
+
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.usmapper">
+    <select id="getInfo" parameterType="String" resultType="com.example.springbootdemo.bean.user">
+        SELECT * from users WHERE UserName =#{ UserName } AND PassWord=#{ PassWord }
+    </select>
+
+    <select id="select" parameterType="String" resultType="com.example.springbootdemo.bean.user">
+        SELECT * from users WHERE Id =#{ Id }
+    </select>
+
+    <select id="userList" resultType="com.example.springbootdemo.bean.user">
+        SELECT * from users
+    </select>
+
+    <select id="delete" resultType="com.example.springbootdemo.bean.user">
+        delete from users where Id=#{ Id }
+    </select>
+
+    <insert id="add">
+        insert into users(`Id`, `UserName`, `PassWord`, `Sex`, `Address`, `Phone`, `VX`, `QQ`, `Email`)
+        values (#{Id},#{UserName},#{PassWord},#{Sex},#{Address},#{Phone},#{VX},#{QQ},#{Email})
+    </insert>
+
+    <update id="update">
+        update users
+        set  UserName=#{UserName},PassWord=#{PassWord},Sex=#{Sex},Address=#{Address},Phone=#{Phone},VX=#{VX},QQ=#{QQ},Email=#{Email}
+        where Id=#{Id}
+    </update>
+
+
+</mapper>

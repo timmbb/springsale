@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>销售人员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/tosaCustomer"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li><a href="/tosaProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li><a href="/tosaOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li class="current"><a href="/tosaSales"><span class="icon icon-salesman"></span>个人管理</a></li>
+        </ul>
+    </div><!--header-->
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li class="current"><a href="/toSelectsa" class="find">个人信息</a></li>
+            <li><a href="/toUpdatesa" class="revise">修改信息</a></li>
+        </ul>
+        <br /><br />
+    </div><!--leftmenu-->
+    <div class="centercontent">
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">ID</th>
+                    <th class="head1">Name</th>
+                    <th class="head0">Password</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="cs:${pages}" th:inline="none">
+                    <!--/*@thymesVar id="cs" type=""*/-->
+                    <td th:text="${cs.getsid()}"></td>
+                    <td th:text="${cs.getsname()}"></td>
+                    <td th:text="${cs.getspassword()}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+</div>
+</div><!--bodywrapper-->
+
+</body>
+</html>

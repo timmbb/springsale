@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.salesmapper">
+    <select id="getInfo" resultType="com.example.springbootdemo.bean.sales">
+        SELECT * from salesman where sname=#{sname} and spassword=#{spassword}
+    </select>
+
+    <select id="salesList" resultType="com.example.springbootdemo.bean.sales">
+        SELECT * from salesman
+    </select>
+
+    <select id="select" parameterType="String" resultType="com.example.springbootdemo.bean.sales">
+        SELECT * from salesman WHERE sname =#{ sname }
+    </select>
+    <select id="selectself" parameterType="String" resultType="com.example.springbootdemo.bean.sales">
+        SELECT * from salesman WHERE sid =#{ sid }
+    </select>
+
+    <select id="delete" resultType="com.example.springbootdemo.bean.sales">
+        delete from salesman where sid=#{ sid }
+    </select>
+
+    <insert id="add">
+        insert into salesman(`sid`, `sname`, `spassword`)
+        values (#{sid},#{sname},#{spassword})
+    </insert>
+
+    <update id="update">
+        update salesman
+        set  sname=#{sname},spassword=#{spassword}
+        where sid=#{sid}
+    </update>
+
+</mapper>

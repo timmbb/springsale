@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.ordersmapper">
+
+    <select id="ordersList" resultType="com.example.springbootdemo.bean.orders">
+        SELECT * from saleorder
+    </select>
+
+    <select id="selectall" parameterType="String" resultType="com.example.springbootdemo.bean.orders">
+        SELECT saleorder.* from saleorder,salesman WHERE salesman.sname =#{ sname } and salesman.sid=saleorder.sid
+    </select>
+    <select id="selectself" parameterType="String" resultType="com.example.springbootdemo.bean.orders">
+        SELECT * from saleorder WHERE oid =#{ oid }
+    </select>
+
+    <select id="delete" resultType="com.example.springbootdemo.bean.orders">
+        delete from saleorder where oid=#{ oid }
+    </select>
+
+    <insert id="add">
+        insert into saleorder(`oid`,`pid`,`pName`,`price`,`amount`,`submittime`,`issales`,`Id`,`sid`)
+        values (#{oid},#{pid},#{pName},#{price},#{amount},#{submittime},#{issales},#{Id},#{sid})
+    </insert>
+
+    <update id="update">
+        update saleorder
+        set  pid=#{pid},pName=#{pName},price=#{price},amount=#{amount},submittime=#{submittime},issales=#{issales},Id=#{Id},sid=#{sid}
+        where oid=#{oid}
+    </update>
+
+</mapper>

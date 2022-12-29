@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>销售人员界面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">欢迎，<span>销售人员</span></h1>
+            <span class="slogan">销售管理系统</span>
+
+            <br clear="all" />
+
+        </div><!--left-->
+
+        <div class="right">
+            <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+            </div>-->
+
+        </div><!--right-->
+    </div><!--topheader-->
+
+
+    <div class="header">
+        <ul class="headermenu">
+            <li><a href="/tosaCustomer"><span class="icon icon-customer"></span>客户管理</a></li>
+            <li class="current"><a href="/tosaProduct"><span class="icon icon-project"></span>产品管理</a></li>
+            <li><a href="/tosaOrder"><span class="icon icon-order"></span>订单管理</a></li>
+            <li><a href="/tosaSales"><span class="icon icon-salesman"></span>个人管理</a></li>
+        </ul>
+    </div><!--header-->
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li><a href="/toSelectp" class="find">产品查询</a></li>
+            <li class="current"><a href="/toAddp" class="add">增添产品</a></li>
+            <li><a href="/toUpdatep" class="revise">修改信息</a></li>
+        </ul>
+        <br /><br />
+    </div><!--leftmenu-->
+
+    <div class="centercontent" align="left">
+        <div class="fromreport">
+            <form action="/addp" method="post">
+                <label class="">产品Id:</label>
+                <div><input  type="text" name="pid"><br> </div>
+                <label class="">产品名称:</label>
+                <div><input  type="text" name="pName"><br>   </div>
+                <label class="">产品类型:</label>
+                <div><input type="text" name="pType"><br> </div>
+                <label class="">产品作者:</label>
+                <div><input type="text" name="pAuthor"><br> </div>
+                <label class="">产品价格:</label>
+                <div><input type="text" name="pPrice"><br>  </div>
+                <label class="">产品数量:</label>
+                <div><input type="text" name="pAmount"><br> </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="提交"></div><br>
+                <div class="reset">
+                    <input type="reset" value="重置"> </div>
+            </form>
+
+        </div>
+    </div><!-- centercontent -->
+
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.productmapper">
+
+    <select id="productList" resultType="com.example.springbootdemo.bean.product">
+        SELECT * from product
+    </select>
+
+    <select id="select" parameterType="String" resultType="com.example.springbootdemo.bean.product">
+        SELECT * from product WHERE pid =#{ pid }
+    </select>
+
+    <select id="delete" resultType="com.example.springbootdemo.bean.product">
+        delete from product where pid=#{ pid }
+    </select>
+
+    <insert id="add">
+        insert into product(`pid`, `pName`, `pType`, `pAuthor`, `pPrice`, `pAmount`)
+        values (#{pid},#{pName},#{pType},#{pAuthor},#{pPrice},#{pAmount})
+    </insert>
+
+    <update id="update">
+        update product
+        set  pName=#{pName},pType=#{pType},pAuthor=#{pAuthor},pPrice=#{pPrice},pAmount=#{pAmount}
+        where pid=#{pid}
+    </update>
+
+</mapper>
