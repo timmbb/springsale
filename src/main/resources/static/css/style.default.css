@@ -1,25 +1,4 @@
-/***
- * Created by: Mienard Lumaad
- * Date: May 15, 2012
- * Website: http://themepixels.com/
-***/
 
-@import url('../fonts/roboto.css');
-@import url('plugins/jquery.alerts.css');
-@import url('plugins/uniform.tp.css');
-@import url('plugins/jquery.ui.css');
-@import url('plugins/jquery.ui.autocomplete.css');
-@import url('plugins/fullcalendar.css');
-@import url('plugins/colorbox.css');
-@import url('plugins/colorpicker.css');
-@import url('plugins/jquery.jgrowl.css');
-@import url('plugins/jquery.tagsinput.css');
-@import url('plugins/ui.spinner.css');
-@import url('plugins/jquery.chosen.css');
-
-
-/***** 1. RESET STYLE *****/
-/**************************/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -37,8 +16,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 
-/***** 2. GENERAL STYLES *****/
-/*****************************/
 
 
 body { font-size: 12px; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; color: #666; line-height: 21px; }
@@ -61,9 +38,6 @@ body.withmenucoll { background-position: 55px 0; } /* with menu style 1 in colla
 body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in collapsed mode */
 
 
-/***** 3. COLUMN STYLE *****/
-/***************************/
-
 
 .one_half{ width:48.5%; }
 .one_third{ width:31.16%; }
@@ -83,9 +57,6 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 .last{ margin-right:0 !important; clear:right; }
 
 
-
-/***** 4. LOGIN PAGE *****/
-/*************************/
 
 .loginpage { background: #fff url(../images/patternbg.png); }
 .loginbox { 
@@ -188,8 +159,6 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 .loginpage .notibar { border: 0; }
 
 
-/***** 5. TOP HEADER STYLES *****/
-/********************************/
 
 
 .topheader { background: #34445e url(../images/default/topheaderbg.png); padding: 8px 10px; position: relative; border-bottom: 1px solid #303f59; }
@@ -233,9 +202,6 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); z-index: 200;
 }
 
-
-/***** 5. NOTIFICATION STYLES *****/
-/**********************************/
 
 
 
@@ -357,9 +323,6 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 .withmenucoll .centercontent { margin-left: 56px; }
 .withmenucoll2 .centercontent { margin-left: 36px; }
 
-
-/***** 12. MAIN CONTENT STYLES *****/
-/***********************************/
 
 
 .contentwrapper { padding: 20px; }
