@@ -64,6 +64,7 @@ public class AdUserController {
         model.addAttribute("pages", users);
         return "ad_customer";
     }
+
     @RequestMapping("toadAdd")
     public String toAdd(){
         return "ad_cuadd";

@@ -63,6 +63,7 @@ public class AdOrderController {
         model.addAttribute("pages", orders);
         return "ad_order";
     }
+
     @RequestMapping("toadAddo")
     public String toadAdd(){
         return "ad_oradd";

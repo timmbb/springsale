@@ -139,7 +139,7 @@
                     <!--/*@thymesVar id="pages" type=""*/-->
                     <tr  th:each="cs : ${pages}" th:inline="none">
                         <td>
-                            <input type="checkbox" name="ids" th:value="${cs.getOid()}">
+                            <input type="checkbox" name="oids" th:value="${cs.getOid()}">
                         </td>
                         <td th:text="${cs.getOid()}"></td>
                         <td th:text="${cs.getpid()}"></td>
