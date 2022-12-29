@@ -42,6 +42,13 @@ public class AdProductController {
         return "ad_prfind";
     }
 
+    @RequestMapping(value = "/adselectpe",method = RequestMethod.POST)
+    public String adproductselecte(String pid, Model model ) {
+        product products = productService.select(pid);
+        model.addAttribute("pages", products);
+        return "ad_prrev";
+    }
+
     @RequestMapping(value = "/addeletep",method = RequestMethod.POST)
     public String adproductdelete(String[] pids,Model model ) {//,String Id,
         for(String pid:pids){

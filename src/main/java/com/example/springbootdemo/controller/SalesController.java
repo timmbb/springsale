@@ -43,6 +43,13 @@ public class SalesController {
         return "ad_safind";
     }
 
+    @RequestMapping(value = "/adselectse",method = RequestMethod.POST)
+    public String salesselecte(String sid, Model model ) {
+        sales saless = salesService.selectself(sid);
+        model.addAttribute("pages", saless);
+        return "ad_sarev";
+    }
+
     @RequestMapping(value = "/addeletes",method = RequestMethod.POST)
     public String adsalesdelete(String[] sids,Model model ) {//,String Id,
         for(String sid:sids){

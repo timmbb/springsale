@@ -48,6 +48,13 @@ public class AdUserController {
         return "ad_cufind";
     }
 
+    @RequestMapping(value = "/adselecte",method = RequestMethod.POST)
+    public String userselecte(String Id, Model model ) {
+        user users = usService.select(Id);
+        model.addAttribute("pages", users);
+        return "ad_curev";
+    }
+
     @RequestMapping(value = "/addelete",method = RequestMethod.POST)
     public String userdelete(String[] ids,Model model ) {//,String Id,
         for(String id:ids){

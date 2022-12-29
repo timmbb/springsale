@@ -42,6 +42,13 @@ public class ProductController {
         return "sa_prfind";
     }
 
+    @RequestMapping(value = "/selectpe",method = RequestMethod.POST)
+    public String productselecte(String pid, Model model ) {
+        product products = productService.select(pid);
+        model.addAttribute("pages", products);
+        return "sa_prrev";
+    }
+
     @RequestMapping(value = "/deletep",method = RequestMethod.POST)
     public String productdelete(String[] pids,Model model ) {//,String Id,
         for(String pid:pids){

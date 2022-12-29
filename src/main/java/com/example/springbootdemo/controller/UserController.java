@@ -48,6 +48,13 @@ public class UserController {
         return "sa_cufind";
     }
 
+    @RequestMapping(value = "/selecte",method = RequestMethod.POST)
+    public String userselecte(String Id, Model model ) {
+        user users = usService.select(Id);
+        model.addAttribute("pages", users);
+        return "sa_curev";
+    }
+
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     public String userdelete(String[] ids,Model model ) {//,String Id,
         for(String id:ids){

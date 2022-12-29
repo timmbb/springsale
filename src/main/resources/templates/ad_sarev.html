@@ -47,15 +47,27 @@
     </div><!--leftmenu-->
 
     <div class="centercontent" align="left">
+        <div id="contentwrapper" class="contentwrapper">
+            <div class="search">
+                <form action="/adselectse" method="post">
+                    <input type="text" name="sid" id="sid" value="请输入要查找的员工ID" />
+                    <input type="submit" class="submitbutton"/>
+                </form>
+            </div><!--search-->
+            <br>
+            <br>
+
         <div class="fromreport">
             <form action="/adupdates" method="post">
+                <div th:each="cs : ${pages}">
                 <label class="">Id:</label>
-                <div><input  type="text" name="sid"><br> </div>
+                <div><input  type="text" name="sid" th:value="${cs.getsid()}"><br> </div>
                 <label class="">名称:</label>
-                <div><input  type="text" name="sname"><br>   </div>
+                <div><input  type="text" name="sname" th:value="${cs.getsname()}"><br>   </div>
                 <label class="">密码:</label>
-                <div><input type="text" name="spassword"><br> </div>
+                <div><input type="text" name="spassword" th:value="${cs.getspassword()}"><br> </div>
                 <br>
+                </div>
                 <div class="submit">
                     <input type="submit" value="提交"></div><br>
                 <div class="reset">
@@ -65,7 +77,7 @@
         </div>
     </div><!-- centercontent -->
 
-
+    </div>
 </div><!--bodywrapper-->
 
 </body>

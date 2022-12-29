@@ -87,13 +87,20 @@ public class OrderController {
     public String toSelect(){
         return "sa_orfind";
     }
-    @RequestMapping(value = "/selecto",method = RequestMethod.POST)
-    public String orderselect(Model model,HttpSession session) {//String oid, String sid,
+    @RequestMapping(value = "/selectoe",method = RequestMethod.POST)
+    public String orderselecte(Model model,HttpSession session) {//String oid, String sid,
         String sname =(String) session.getAttribute("sname");
         orders orders = orderService.selectall(sname);
         model.addAttribute("pages", orders);
         return "sa_orfind";
     }*/
+
+    @RequestMapping(value = "/selectoe",method = RequestMethod.POST)
+    public String orderselecte(String oid, Model model ) {
+        orders orders = orderService.selectself(oid);
+        model.addAttribute("pages", orders);
+        return "sa_orrev";
+    }
 
     @RequestMapping(value = "/deleteo",method = RequestMethod.POST)
     public String orderdelete(String[] oids,Model model ,HttpSession session) {//,String Id,

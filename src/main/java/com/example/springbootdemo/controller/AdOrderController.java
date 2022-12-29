@@ -47,6 +47,13 @@ public class AdOrderController {
         return "ad_orfind";
     }
 
+    @RequestMapping(value = "/adselectoe",method = RequestMethod.POST)
+    public String adorderselecte(String oid, Model model ) {
+        orders orders = orderService.selectself(oid);
+        model.addAttribute("pages", orders);
+        return "ad_orrev";
+    }
+
     @RequestMapping(value = "/addeleteo",method = RequestMethod.POST)
     public String adorderdelete(String[] oids,Model model ) {//,String Id,
         for(String oid:oids){

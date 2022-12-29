@@ -38,7 +38,7 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="/toadSelecto" class="find">订单查询</a></li>-->
+            <li><a href="/toadSelecto" class="find">订单查询</a></li>
             <li><a href="/toadAddo" class="add">增添订单</a></li>
             <li class="current"><a href="/toadUpdateo" class="revise">修改信息</a></li>
         </ul>
@@ -46,27 +46,40 @@
     </div><!--leftmenu-->
 
     <div class="centercontent" align="left">
+        <div id="contentwrapper" class="contentwrapper">
+            <div class="search">
+                <form action="/adselectoe" method="post">
+                    <input type="text" name="oid" id="oid" value="请输入要修改的订单ID" />
+                    <input type="submit" class="submitbutton"/>
+                </form>
+            </div><!--search-->
+            <br>
+            <br>
+
+
         <div class="fromreport">
             <form action="/adupdateo" method="post">
+                <div th:each="cs : ${pages}">
                 <label class="">订单Id:</label>
-                <div><input  type="text" name="oid"><br> </div>
+                <div><input  type="text" name="oid" th:value="${cs.getOid()}"><br> </div>
                 <label class="">产品Id:</label>
-                <div><input  type="text" name="pid"><br>   </div>
+                <div><input  type="text" name="pid" th:value="${cs.getpid()}"><br>   </div>
                 <label class="">客户Id:</label>
-                <div><input type="text" name="Id"><br> </div>
+                <div><input type="text" name="Id" th:value="${cs.getId()}"><br> </div>
                 <label class="">销售人员Id:</label>
-                <div><input type="text" name="sid"><br> </div>
+                <div><input type="text" name="sid" th:value="${cs.getSid()}"><br> </div>
                 <label class="">产品名称:</label>
-                <div><input type="text" name="pName"><br>  </div>
+                <div><input type="text" name="pName" th:value="${cs.getpName()}"><br>  </div>
                 <label class="">数量:</label>
-                <div><input type="text" name="amount"><br> </div>
+                <div><input type="text" name="amount" th:value="${cs.getAmount()}"><br> </div>
                 <label class="">交易金额:</label>
-                <div><input type="text" name="price"><br></div>
+                <div><input type="text" name="price" th:value="${cs.getPrice()}"><br></div>
                 <label class="">交易时间:</label>
-                <div><input type="text" name="submittime"><br></div>
+                <div><input type="text" name="submittime" th:value="${cs.getSubmittime()}"><br></div>
                 <label class="">是否交货:</label>
-                <div><input type="text" name="issales"><br>  </div>
+                <div><input type="text" name="issales" th:value="${cs.getIssales()}"><br>  </div>
                 <br>
+                </div>
                 <div class="submit">
                     <input type="submit" value="提交"></div><br>
                 <div class="reset">
@@ -75,7 +88,7 @@
 
         </div>
     </div><!-- centercontent -->
-
+    </div>
 
 </div><!--bodywrapper-->
 
