@@ -12,6 +12,9 @@
     <select id="userList" resultType="com.example.springbootdemo.bean.user">
         SELECT * from users
     </select>
+    <select id="sauserList" parameterType="String" resultType="com.example.springbootdemo.bean.user">
+        SELECT users.* from users,saleorder,salesman WHERE salesman.sname =#{ sname } and salesman.sid=saleorder.sid and saleorder.Id=users.Id
+    </select>
 
     <select id="delete" resultType="com.example.springbootdemo.bean.user">
         delete from users where Id=#{ Id }

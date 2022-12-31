@@ -9,6 +9,7 @@ public interface usService {
     user logIn(String UserName, String PassWord);
 
     List<user> userList();
+    List<user> sauserList(String sname);
 
     user select(String Id);
 

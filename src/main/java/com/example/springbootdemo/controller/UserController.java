@@ -1,6 +1,8 @@
 package com.example.springbootdemo.controller;
 
+import com.example.springbootdemo.bean.orders;
 import com.example.springbootdemo.bean.user;
+import com.example.springbootdemo.service.ordersService;
 import com.example.springbootdemo.service.usService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Iterator;
@@ -23,16 +26,18 @@ public class UserController {
 
     @Resource
     private usService usService;
-
+/*
     @RequestMapping(value = "/toPage",method = RequestMethod.GET)
     public String toPage(HttpServletRequest request){
         String url=request.getParameter("url");
         return url;
-    }
+    }*/
+
 
     @RequestMapping("tosaCustomer")
-    public String tosaCustomer(Model model) {
-        List<user> users = usService.userList();
+    public String tosaCustomer(Model model,HttpSession session) {
+        String sname =(String) session.getAttribute("sname");
+        List<user> users = usService.sauserList(sname);
         model.addAttribute("pages", users);
         return "sa_customer";
     }

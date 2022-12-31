@@ -8,6 +8,7 @@ public interface usmapper {
     user getInfo(String UserName, String PassWord);
 
     List<user> userList();
+    List<user> sauserList(String sname);
 
     user select(String Id);
 

@@ -17,15 +17,16 @@ public class usServiceimpl implements usService {
 
     public user logIn(String UserName, String PassWord)
     {
-//        user user=usermapper.getInfo(UserName, PassWord);
-//        if(user!=null){
-//
-//        }
         return usermapper.getInfo(UserName, PassWord);
     }
 
     public List<user> userList(){
         return usermapper.userList();
+    }
+
+    @Override
+    public List<user> sauserList(String sname) {
+        return usermapper.sauserList(sname);
     }
 
     @Override
