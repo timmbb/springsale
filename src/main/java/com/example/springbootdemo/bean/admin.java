@@ -1,7 +1,7 @@
 package com.example.springbootdemo.bean;
 
 public class admin {
-     private String AdminId;
+        private String AdminId;
         private String AdminUser;
         private String AdminPass;
 

@@ -1,0 +1,16 @@
+@startuml
+!include /Users/coder4/code/C4-PlantUML/C4_Context.puml
+Person(user, "用户", "小程序电商系统的潜在用户")
+AddElementTag("existing_system", $bgColor="#777", $borderColor="#555", $fontColor="white")
+System_Boundary(c1, "小程序电商系统") {
+    System(weappMallSystem, "小程序商城", "提供 浏览商品，添加购物车，下单，支付，联系客服，查询物流 等功能")
+    System(ecomMiddlePlatform, "电商中台", "提供 商品中台 库存中台 物流中台 订单中台 等中台能力", $tags="existing_system")
+}
+System_Ext(weixinPlatform, "微信公众平台", "提供 用户授权、支付、推送 等功能")
+Rel_D(user, weappMallSystem, "使用")
+Rel_U(weixinPlatform, user, "交互")
+Rel(weappMallSystem, ecomMiddlePlatform, "交互")
+Rel(ecomMiddlePlatform, weixinPlatform, "交互")
+Rel(weappMallSystem, weixinPlatform, "交互")
+SHOW_FLOATING_LEGEND()
+@enduml
