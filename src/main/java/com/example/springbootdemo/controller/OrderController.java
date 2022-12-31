@@ -45,7 +45,7 @@ public class OrderController {
     public String loginMethod(String sname, String spassword, Model model, HttpSession session)//
     {
         sales sales=salesService.logIn(sname, spassword);
-        List<user> users = userService.userList();
+        List<user> users = userService.sauserList(sname);
         model.addAttribute("pages", users);
         if (sales!=null)
         {
